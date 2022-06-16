@@ -1,0 +1,5 @@
+IdeaVIM
+com.intellij.kubernetes
+org.jetbrains.plugins.go-template
+org.sonarlint.idea
+zielu.gittoolbox
