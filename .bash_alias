@@ -133,6 +133,12 @@ krd(){
 }
 
 
+kpf(){
+  port=$1
+  kubectl port-forward $(echo $(kgp | sed "1d" | fzf) |  head -n1 | cut -d " " -f1) $port
+}
+
+
 alias yss='yay -Ss'
 alias ys='yay -S'
 alias yRns='yay -Rns'
@@ -153,9 +159,9 @@ get_container() {
 
 st() {
   if [[ -n "$1" ]]; then
-    stern --tail 10 "$1" --exclude-container "istio-\w"
+    stern --tail 20 "$1" --exclude-container "istio-\w"
   else
-    stern --tail 10 $(get_container) --exclude-container "istio-\w"
+    stern --tail 20 $(get_container) --exclude-container "istio-\w"
   fi
 }
 
