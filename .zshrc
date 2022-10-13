@@ -12,7 +12,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR=nvim
+export EDITOR=vim
 export KUBECONFIG=$(find ~/.kube/clusters -type f | sed ':a;N;s/\n/:/;ba')
 
 unalias -a

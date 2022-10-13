@@ -60,13 +60,13 @@ nmap <leader>rb <action>(Vcs.RollbackChangedLines)
 nmap <leader>t <action>(Switcher)
 nnoremap <leader>ga :action GotoAction<cr>
 nnoremap <leader>gi :action GotoImplementation<cr>
-nnoremap <leader>gs :action GotoSuperMethod<cr>
 nnoremap <leader>gd :action GotoDeclaration<cr>
+nnoremap <leader>gs :action GotoSuperMethod<cr>
 nnoremap <leader>gt :action GotoTest<cr>
 nnoremap <leader>gr :action GotoRelated<cr>
 nnoremap <leader>gf :action GotoFile<cr>
-" nnoremap <C-k> :action MoveStatementUp<cr>
-" nnoremap <C-j> :action MoveStatementDown<cr>
+nnoremap <C-S-k> :action MoveStatementUp<cr>
+nnoremap <C-S-j> :action MoveStatementDown<cr>
 
 noremap <C-o> :action Back<cr>
 noremap <C-i> :action Forward<cr>
@@ -105,8 +105,8 @@ nnoremap <C-0> :action StepOver<cr>
 nnoremap <C-9> :action StepInto<cr>
 
 " Windows
-nnoremap <leader>ss :action ShowIntentionActions<cr>
 nnoremap <leader>q  :action CloseContent<cr>
+nnoremap <leader>ss :action ShowIntentionActions<cr>
 nnoremap <leader><Space>  :action FileStructurePopup<cr>
 
 nnoremap <leader>mp :action ManageRecentProjects<cr>

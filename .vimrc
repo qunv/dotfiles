@@ -98,5 +98,10 @@ set clipboard=unnamed
 set ignorecase
 set smartcase
 
+" copy tricks
+vmap '' :w !xclip -i -sel clip<CR><CR>
+vnoremap <C-c> "+y
+vmap <C-y> :%y+<CR><CR>
+
 colorscheme onehalfdark
 
