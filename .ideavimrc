@@ -30,10 +30,6 @@ set ideajoin
 set surround
 set multiple-cursors
 
-nnoremap zR :action ExpandAllRegions<cr>
-nnoremap [c :action VcsShowPrevChangeMarker<cr>
-nnoremap <leader>hp :action VcsShowPrevChangeMarker<cr>
-nnoremap ]c :action VcsShowNextChangeMarker<cr>
 nnoremap <leader>qi :action QuickImplementations<cr>
 
 " Find

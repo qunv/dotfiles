@@ -98,10 +98,14 @@ set clipboard=unnamed
 set ignorecase
 set smartcase
 
+" Nerdtree setup
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.DS_Store$', '\.git$', '\.idea'] " ignore files in nerd tree
+
 " copy tricks
 vmap '' :w !xclip -i -sel clip<CR><CR>
 vnoremap <C-c> "+y
 vmap <C-y> :%y+<CR><CR>
 
-colorscheme onehalfdark
+colorscheme onehalfdark 
 
