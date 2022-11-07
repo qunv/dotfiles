@@ -1,4 +1,4 @@
-colorscheme onehalfdark
+colorscheme onehalfdark 
 
 "plantuml conf
 let g:plantuml_executable_script = "$HOME/.vim/plantuml/uml.sh"

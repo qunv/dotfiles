@@ -108,4 +108,3 @@ vnoremap <C-c> "+y
 vmap <C-y> :%y+<CR><CR>
 
 colorscheme onehalfdark 
-

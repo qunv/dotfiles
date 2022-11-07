@@ -116,6 +116,5 @@ nnoremap <C-S--> :action SplitHorizontally<cr>
 nnoremap <leader>grd :action Git.ResolveConflicts<cr>
 nnoremap <leader>gpr :action Github.View.Pull.Request<cr>
 
-
 nnoremap <leader>aa :action IdeaVim.ReloadVimRc.reload<cr>
 nnoremap <leader>ca :%y+<cr>
