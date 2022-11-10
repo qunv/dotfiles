@@ -42,7 +42,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'dense-analysis/ale'
-Plug 'valloric/youcompleteme'
 
 call plug#end()
 

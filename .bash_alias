@@ -149,8 +149,8 @@ alias dpsa='docker ps -a'
 alias dil='docker image ls'
 alias dcl='docker container ls'
 alias dcla='docker container ls -a'
-alias dri='docker images | sed '1d' | fzf -m | awk '{print $3}' | xargs docker rmi'
-alias drc='docker ps -a | sed '1d' | fzf -m | awk '{print $1}' | xargs docker rm -v'
+alias dirm='docker images | sed '1d' | fzf -m | awk '{print $3}' | xargs docker rmi'
+alias dcrm='docker ps -a | sed '1d' | fzf -m | awk '{print $1}' | xargs docker rm -v'
 alias dthanos='docker system prune -f --all --volumes'
 
 get_container() {
