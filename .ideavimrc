@@ -118,3 +118,5 @@ nnoremap <leader>gpr :action Github.View.Pull.Request<cr>
 
 nnoremap <leader>aa :action IdeaVim.ReloadVimRc.reload<cr>
 nnoremap <leader>ca :%y+<cr>
+nnoremap <leader>ww viw
+nnoremap <leader>yw yiw

@@ -92,14 +92,14 @@ syntax on
 
 set hidden
 
-set clipboard=unnamed
-
 set ignorecase
 set smartcase
 
 " Nerdtree setup
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.DS_Store$', '\.git$', '\.idea'] " ignore files in nerd tree
+
+set clipboard+=unnamedplus
 
 " copy tricks
 vmap '' :w !xclip -i -sel clip<CR><CR>

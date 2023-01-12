@@ -51,6 +51,7 @@ alias grbm='git rebase master'
 alias grh='git reset --hard'
 alias grs='git reset --soft HEAD~1'
 alias gst='git status'
+alias gtls='git tag -l --sort=v:refname | tail -n 3'
 
 alias k='kubectl'
 alias kgp='kubectl get pod'

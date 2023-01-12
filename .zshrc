@@ -16,6 +16,7 @@ export EDITOR=nvim
 
 cp -R ~/dotfiles/.config/nvim/* ~/.config/nvim/
 
+# export kubectl
 export KUBECONFIG=$(find ~/.kube/clusters -type f | sed ':a;N;s/\n/:/;ba')
 
 unalias -a
