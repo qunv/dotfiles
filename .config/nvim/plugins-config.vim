@@ -13,6 +13,17 @@ setlocal spellfile+=~/.vim/spell/en.utf-8.add
 let syntastic_stl_format = '[Syntax: %E{line:%fe }%W{#W:%w}%B{ }%E{#E:%e}]'
 let g:ctrlp_user_command = 'fd --type f --hidden --exclude .git'
 
+" deocomplete
+let g:deoplete#enable_at_startup = 1
+
+function! Multiple_cursors_before()
+    let b:deoplete_disable_auto_complete = 1
+endfunction
+
+function! Multiple_cursors_after()
+    let b:deoplete_disable_auto_complete = 0
+endfunction
+
 "nerdtree settings
 " autocmd vimenter * NERDTree | wincmd p
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -20,12 +31,25 @@ let g:NERDTreeMouseMode = 2
 let g:NERDTreeWinSize = 40
 let g:NERDTreeMinimalUI=1
 let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.DS_Store$', '\.git$'] " ignore files in nerd tree
+let g:NERDTreeChDirMode = 2
 
-nnoremap <leader>1 :NERDTreeToggle %<CR>
+function! NERDTreeToggleInCurDir()
+  " If NERDTree is open in the current buffer
+  if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+    exe ":NERDTreeClose"
+  else
+    if (expand("%:t") != '')
+      exe ":NERDTreeFind"
+    else
+      exe ":NERDTreeToggle"
+    endif
+  endif
+endfunction
+
+" nnoremap <silent> <leader>1 :NERDTreeToggle %<CR>
+nnoremap <silent> <leader>1 :call NERDTreeToggleInCurDir()<cr>
 
 "explorer mappings
-nnoremap <f4> :NERDTreeFind<cr>
 nnoremap <c-f> :CtrlP<cr>
 
 "ultisnips settings
@@ -58,7 +82,7 @@ let g:tex_flavor = "latex"
 
 let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
 let g:alchemist_tag_disable = 1
-let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
+let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$', '\.DS_Store$', '\.git$']
 
  " coc-python settings
  let g:python_host_prog = '/usr/bin/python3'

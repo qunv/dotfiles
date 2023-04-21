@@ -42,6 +42,19 @@ Plug 'mlaursen/vim-react-snippets'
 
 Plug 'puremourning/vimspector'
 
+" vim-go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'dense-analysis/ale'
+Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+    Plug 'Shougo/deoplete.nvim'
+   Plug 'roxma/nvim-yarp'
+   Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+" Plug 'lifepillar/vim-mucomplete'
 """ Themes
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 

@@ -71,4 +71,3 @@ noremap <silent> j gj
 noremap <silent> 0 g0
 noremap <silent> $ g$
 
-nnoremap <silent> <leader>1 :NERDTree %<CR>
