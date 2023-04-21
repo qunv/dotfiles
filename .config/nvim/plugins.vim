@@ -7,6 +7,7 @@ Plug 'yegappan/mru'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-eunuch'                                                           " Helpers for UNIX
 Plug 'romainl/vim-cool'                                                           " Search highlight more useful.
