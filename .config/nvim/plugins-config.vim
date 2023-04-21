@@ -13,16 +13,17 @@ setlocal spellfile+=~/.vim/spell/en.utf-8.add
 let syntastic_stl_format = '[Syntax: %E{line:%fe }%W{#W:%w}%B{ }%E{#E:%e}]'
 let g:ctrlp_user_command = 'fd --type f --hidden --exclude .git'
 
-" deocomplete
-let g:deoplete#enable_at_startup = 1
-
-function! Multiple_cursors_before()
-    let b:deoplete_disable_auto_complete = 1
-endfunction
-
-function! Multiple_cursors_after()
-    let b:deoplete_disable_auto_complete = 0
-endfunction
+" deocomplete""""""""""""""""""""""
+"let g:deoplete#enable_at_startup = 0
+"
+"function! Multiple_cursors_before()
+"    let b:deoplete_disable_auto_complete = 1
+"endfunction
+"
+"function! Multiple_cursors_after()
+"    let b:deoplete_disable_auto_complete = 0
+"endfunction
+""""""""""""""""""""""""""
 
 "nerdtree settings
 " autocmd vimenter * NERDTree | wincmd p
