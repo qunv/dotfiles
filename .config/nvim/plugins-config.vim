@@ -85,16 +85,9 @@ let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
 let g:alchemist_tag_disable = 1
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$', '\.DS_Store$', '\.git$']
 
- " coc-python settings
- let g:python_host_prog = '/usr/bin/python3'
- let g:python3_host_prog = '/usr/bin/python3'
-
- let g:snips_author='kpanic'
- let g:snips_email='anhptvolga@yandex.ru'
- let g:snips_github='https://github.com/anhptvolga'
  autocmd FileType python let b:coc_root_patterns = ['.git']
 
-nnoremap <leader>ot :FloatermNew<CR>
+nnoremap <leader>t :FloatermNew<CR>
 nnoremap <leader>q :Bdelete<CR>
 
 let g:prettier#autoformat = 0
