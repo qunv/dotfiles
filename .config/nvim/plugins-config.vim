@@ -36,15 +36,15 @@ let g:NERDTreeChDirMode = 2
 
 function! NERDTreeToggleInCurDir()
   " If NERDTree is open in the current buffer
-  if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
-    exe ":NERDTreeClose"
-  else
+  " if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+    " exe \":NERDTreeClose"
+  " else
     if (expand("%:t") != '')
       exe ":NERDTreeFind"
     else
       exe ":NERDTreeToggle"
     endif
-  endif
+  "endif
 endfunction
 
 " nnoremap <silent> <leader>1 :NERDTreeToggle %<CR>
@@ -96,3 +96,5 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 let g:nayvy_coc_completion_icon='✡ nayvy'
 
 let g:vimspector_enable_mappings = 'HUMAN'
+
+nnoremap <leader>ff :FormatCode<CR>

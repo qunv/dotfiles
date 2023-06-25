@@ -49,15 +49,18 @@ Plug 'puremourning/vimspector'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'dense-analysis/ale'
 
-"if has('nvim')
-"    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"else
-"    Plug 'Shougo/deoplete.nvim'
-"   Plug 'roxma/nvim-yarp'
-"   Plug 'roxma/vim-hug-neovim-rpc'
-"endif
+" debug
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
 
 """ Themes
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
+
+" tabtab
+Plug 'romgrk/barbar.nvim'
+
+" md preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'nvim-tree/nvim-web-devicons'
 
 call plug#end()
