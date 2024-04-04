@@ -166,6 +166,14 @@ st() {
   fi
 }
 
+kst() {
+  if [[ -n "$1" ]]; then
+    kubectl-stern --tail 20 "$1" --exclude-container "istio-\w"
+  else
+    kubectl-stern --tail 20 "$(echo "$(kgp | sed "1d" | fzf -m)" | awk '{print $1}' | paste -sd '|')" --exclude-container "istio-\w"
+  fi
+}
+
 jwtd() {
     if [[ -x $(command -v jq) ]]; then
          jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<< "${1}"
