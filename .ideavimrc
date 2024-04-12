@@ -22,14 +22,14 @@ set sidescroll=1"
 set idearefactormode=keep
 
 set system clipboard
-set clipboard=unnamed
+set clipboard+=unnamed
+set clipboard+=unnamedplus
 set clipboard+=ideaput
 
 " set some extensions
 set ideajoin
 set surround
 set multiple-cursors
-
 nnoremap <leader>qi :action QuickImplementations<cr>
 
 " Find
