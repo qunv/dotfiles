@@ -43,6 +43,7 @@ PKGS=(
     zsh
     jetbrains-toolbox
     ttf-nerd-fonts-symbols
+    google-chrome
 )
 
 echo -e "\n${BLUE}>>> Installing packages...${RESET}"
@@ -65,7 +66,9 @@ run git clone https://github.com/qunv/dotfiles.git
 
 # --- Copy configs ---
 echo -e "\n${BLUE}>>> Copying config files...${RESET}"
-run cp -r dotfiles/.Xmodmap \
+run cp -r \
+  dotfiles/.Xmodmap \
+  dotfiles/.xprofile \
   dotfiles/.bash_alias \
   dotfiles/.gitconfig \
   dotfiles/.ideavimrc \
@@ -77,7 +80,8 @@ run cp -r dotfiles/.Xmodmap \
 
 # create this packages if os does not has it
 # mkdir -p ~/.config
-run cp -r dotfiles/.config/alacritty \
+run cp -r \
+  dotfiles/.config/alacritty \
   dotfiles/.config/rofi \
   ~/.config/
 
