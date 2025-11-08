@@ -41,6 +41,7 @@ PKGS=(
     xorg-xmodmap
     tmux
     zsh
+    alacritty
     jetbrains-toolbox
     ttf-nerd-fonts-symbols
     google-chrome
