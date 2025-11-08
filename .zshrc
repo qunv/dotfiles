@@ -14,10 +14,8 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=nvim
 
-# cp -R ~/dotfiles/.config/nvim/* ~/.config/nvim/
-
 # export kubectl
-export KUBECONFIG=$(find ~/.kube/clusters -type f | sed ':a;N;s/\n/:/;ba')
+# export KUBECONFIG=$(find ~/.kube/clusters -type f | sed ':a;N;s/\n/:/;ba')
 
 unalias -a
 source $HOME/dotfiles/.myfzf

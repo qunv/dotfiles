@@ -44,6 +44,8 @@ PKGS=(
     jetbrains-toolbox
     ttf-nerd-fonts-symbols
     google-chrome
+    jdk-openjdk
+    maven
 )
 
 echo -e "\n${BLUE}>>> Installing packages...${RESET}"
