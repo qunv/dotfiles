@@ -52,8 +52,8 @@ for pkg in "${PKGS[@]}"; do
 done
 
 # --- Setup Zsh plugins ---
-# ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
-# mkdir -p "$ZSH_CUSTOM/plugins"
+ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
+mkdir -p "$ZSH_CUSTOM/plugins"
 
 echo -e "\n${BLUE}>>> Installing Zsh plugins...${RESET}"
 run git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
@@ -79,7 +79,7 @@ run cp -r \
   "$HOME"
 
 # create this packages if os does not has it
-# mkdir -p ~/.config
+mkdir -p ~/.config
 run cp -r \
   dotfiles/.config/alacritty \
   dotfiles/.config/rofi \
