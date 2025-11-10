@@ -38,6 +38,7 @@ PKGS=(
     tree
     vim
     nvim
+    htop
     xorg-xmodmap
     tmux
     zsh
@@ -88,10 +89,23 @@ run cp -r \
   dotfiles/.config/rofi \
   ~/.config/
 
+# apply new config in zsh
+source ~/.zshrc
+
 
 #Setup NvChad
 echo -e "\n${BLUE}>>> Setup NvChad...${RESET}"
 run git clone https://github.com/NvChad/starter ~/.config/nvim
+
+# generated a ssh key if not exists
+KEY_PATH="$HOME/.ssh/id_rsa"
+if [ ! -f "$KEY_PATH" ]; then
+    echo "SSH key not found. Generating a new one..."
+    ssh-keygen -t rsa -b 4096 -N "" -f "$KEY_PATH"
+    echo "New SSH key generated."
+else
+    echo "SSH key already exists. Doing nothing."
+fi
 
 echo -e "\n${GREEN}=== ✅ Setup completed successfully! ===${RESET}"
 echo -e "📜 Log saved at: ${YELLOW}$LOGFILE${RESET}"
