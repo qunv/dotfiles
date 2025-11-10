@@ -55,6 +55,9 @@ for pkg in "${PKGS[@]}"; do
     run yay -S --noconfirm --needed "$pkg"
 done
 
+# install oh-my-zsh
+run sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # --- Setup Zsh plugins ---
 ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
 mkdir -p "$ZSH_CUSTOM/plugins"
@@ -88,10 +91,6 @@ run cp -r \
   dotfiles/.config/alacritty \
   dotfiles/.config/rofi \
   ~/.config/
-
-# apply new config in zsh
-source ~/.zshrc
-
 
 #Setup NvChad
 echo -e "\n${BLUE}>>> Setup NvChad...${RESET}"
