@@ -48,7 +48,19 @@ PKGS=(
     google-chrome
     jdk-openjdk
     maven
+    docker
+    docker-compose
+    pgmodeler
+    fcitx5
+    fcitx5-qt
+    fcitx5-gtk
+    fcitx5-unikey
+    kcm-fcitx5
 )
+
+# run docker without sudo
+sudo groupadd docker
+sudo usermod -aG docker $USER
 
 echo -e "\n${BLUE}>>> Installing packages...${RESET}"
 for pkg in "${PKGS[@]}"; do
@@ -70,6 +82,7 @@ run git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
 # --- Clone dotfiles ---
 echo -e "\n${BLUE}>>> Cloning dotfiles...${RESET}"
 run git clone https://github.com/qunv/dotfiles.git
+
 
 # --- Copy configs ---
 echo -e "\n${BLUE}>>> Copying config files...${RESET}"
