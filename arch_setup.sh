@@ -56,6 +56,7 @@ PKGS=(
     fcitx5-gtk
     fcitx5-unikey
     kcm-fcitx5
+    rofi
 )
 
 # run docker without sudo
