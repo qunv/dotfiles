@@ -141,7 +141,7 @@ kpf(){
 
 
 alias yss='yay -Ss'
-alias ys='yay -S'
+alias ys='yay -S --noconfirm --needed'
 alias yRns='yay -Rns'
 alias pSyu='sudo pacman -Syu'
 
