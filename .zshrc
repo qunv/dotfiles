@@ -18,8 +18,8 @@ export EDITOR=nvim
 # export KUBECONFIG=$(find ~/.kube/clusters -type f | sed ':a;N;s/\n/:/;ba')
 
 unalias -a
-source $HOME/dotfiles/.myfzf
-source $HOME/dotfiles/.bash_alias
+source $HOME/.myfzf
+source $HOME/.bash_alias
 
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
