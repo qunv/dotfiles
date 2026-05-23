@@ -57,6 +57,7 @@ PKGS=(
     fcitx5-unikey
     kcm-fcitx5
     rofi
+    github-cli
 )
 
 # run docker without sudo
@@ -118,6 +119,7 @@ run git clone https://github.com/NvChad/starter ~/.config/nvim
 
 # generated a ssh key if not exists
 KEY_PATH="$HOME/.ssh/id_rsa"
+PUB_KEY_PATH="${KEY_PATH}.pub"
 if [ ! -f "$KEY_PATH" ]; then
     echo "SSH key not found. Generating a new one..."
     ssh-keygen -t rsa -b 4096 -N "" -f "$KEY_PATH"
@@ -125,6 +127,17 @@ if [ ! -f "$KEY_PATH" ]; then
 else
     echo "SSH key already exists. Doing nothing."
 fi
+
+if [ ! -f "$PUB_KEY_PATH" ]; then
+    echo "SSH public key not found. Generating from private key..."
+    ssh-keygen -y -f "$KEY_PATH" > "$PUB_KEY_PATH"
+    echo "SSH public key generated."
+fi
+
+# setup github cli and upload ssh key
+echo -e "\n${BLUE}>>> Setup GitHub...${RESET}"
+run gh auth login
+run gh ssh-key add "$PUB_KEY_PATH" --title "$(hostname)"
 
 echo -e "\n${GREEN}=== ✅ Setup completed successfully! ===${RESET}"
 echo -e "📜 Log saved at: ${YELLOW}$LOGFILE${RESET}"
