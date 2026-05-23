@@ -71,6 +71,12 @@ done
 # install oh-my-zsh
 run sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# install copilot-cli
+run bash -c "curl -fsSL https://gh.io/copilot-install | bash"
+
+# install codex-cli
+run sh -c "curl -fsSL https://chatgpt.com/codex/install.sh | sh"
+
 # --- Setup Zsh plugins ---
 ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
 mkdir -p "$ZSH_CUSTOM/plugins"
@@ -122,4 +128,3 @@ fi
 
 echo -e "\n${GREEN}=== ✅ Setup completed successfully! ===${RESET}"
 echo -e "📜 Log saved at: ${YELLOW}$LOGFILE${RESET}"
-
