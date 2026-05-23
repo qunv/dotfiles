@@ -58,6 +58,8 @@ PKGS=(
     kcm-fcitx5
     rofi
     github-cli
+    nodejs
+    npm
 )
 
 # run docker without sudo
