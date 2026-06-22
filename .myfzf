@@ -92,3 +92,23 @@ cdd() {
   fi
 }
 
+##################
+##### aws ########
+##################
+awslogs() {
+  local region log_group
+
+  region="${1:-${AWS_REGION:-${AWS_DEFAULT_REGION:-us-west-1}}}"
+  log_group=$(
+    aws logs describe-log-groups \
+      --region "$region" \
+      --query "logGroups[*].logGroupName" \
+      --output text |
+      tr '\t' '\n' |
+      fzf --prompt="CloudWatch log group ($region)> "
+  ) || return
+
+  [ -n "$log_group" ] || return
+
+  aws logs tail "$log_group" --follow --region "$region" --format short
+}
