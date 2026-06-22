@@ -60,6 +60,7 @@ PKGS=(
     github-cli
     nodejs
     npm
+    telegram-desktop
 )
 
 # run docker without sudo
