@@ -99,11 +99,51 @@ set smartcase
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.DS_Store$', '\.git$', '\.idea'] " ignore files in nerd tree
 
-set clipboard+=unnamedplus
+" Use the Linux system clipboard for normal yank/delete/change/put operations.
+" Prefer Wayland's wl-clipboard, with xclip as an X11 fallback.
+function! s:ClipboardProviderAvailable() abort
+    return (executable('wl-copy') && executable('wl-paste')) || executable('xclip')
+endfunction
 
-" copy tricks
-vmap '' :w !xclip -i -sel clip<CR><CR>
+function! s:ClipboardCopy(reg, type, lines) abort
+    let l:text = join(a:lines, "\n")
+    if a:type[0] ==# 'V'
+        let l:text .= "\n"
+    endif
+
+    if executable('wl-copy') && executable('wl-paste')
+        call system('wl-copy', l:text)
+    elseif executable('xclip')
+        call system('xclip -selection clipboard -in', l:text)
+    endif
+endfunction
+
+function! s:ClipboardPaste(reg) abort
+    if executable('wl-copy') && executable('wl-paste')
+        let l:text = system('wl-paste --no-newline')
+    elseif executable('xclip')
+        let l:text = system('xclip -selection clipboard -out')
+    else
+        return ['', []]
+    endif
+
+    return ['', split(l:text, "\n", 1)]
+endfunction
+
+if has('clipboard_provider') && s:ClipboardProviderAvailable()
+    let v:clipproviders['system'] = {
+        \ 'available': function('s:ClipboardProviderAvailable'),
+        \ 'copy': {'+': function('s:ClipboardCopy'), '*': function('s:ClipboardCopy')},
+        \ 'paste': {'+': function('s:ClipboardPaste'), '*': function('s:ClipboardPaste')},
+        \ }
+    set clipmethod^=system
+    set clipboard=unnamedplus
+elseif has('unnamedplus')
+    set clipboard=unnamedplus
+endif
+
+" Convenience mappings; plain y/p also use the system clipboard when available.
 vnoremap <C-c> "+y
-vmap <C-y> :%y+<CR><CR>
+vmap <C-y> :%y+<CR>
 
 colorscheme onehalfdark 

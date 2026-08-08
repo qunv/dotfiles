@@ -37,6 +37,7 @@ PKGS=(
     fzf
     tree
     vim
+    wl-clipboard
     nvim
     htop
     xorg-xmodmap
